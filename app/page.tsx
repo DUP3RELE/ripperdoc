@@ -1,4 +1,4 @@
-import Drawer from "./components/drawer";
+
 
 export default function Home() {
 	return (
@@ -10,8 +10,8 @@ export default function Home() {
 				<p></p>
 			</div>
 			<div className='sticky right-0'>
-				<Drawer />
 			</div>
+			
 		</main>
 	);
 }

@@ -3,6 +3,7 @@ import "../css/drawer.css";
 import arrowRight from "../img/arrow-right-solid.svg";
 import arrowLeft from "../img/arrow-left-solid.svg";
 import card from "../img/address-card-regular.svg";
+import home from "../img/house-solid.svg"
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
@@ -57,19 +58,28 @@ const Drawer = () => {
 						/>
 					)}
 				</button>
+			<div className='mt-16'>
+				<Link href='/'>
+					<button
+						className='menu-button'
+					>
+						<Image
+							src={home}
+							alt='home'
+						/>
+					</button>
+				</Link>
+			</div>
 			</div>
 			<div>
-				<Link href='../pages/login/page'>
-					<button className='underline'>Log In</button>
+				<Link href='/pages/loginPanel'>
+					<p className='underline'>Log In</p>
 				</Link>
 			</div>
 			<div>
-				<a
-					href=''
-					className='underline'
-				>
-					Hardware
-				</a>
+				<Link href='/pages/register'>
+					<p className='underline'>Hardware</p>
+				</Link>
 			</div>
 			<div>
 				<a
@@ -80,12 +90,9 @@ const Drawer = () => {
 				</a>
 			</div>
 			<div>
-				<a
-					href=''
-					className='underline'
-				>
-					Contact
-				</a>
+				<Link href='/pages/contact'>
+					<p className='underline'>Contact</p>
+				</Link>
 			</div>
 			<div className='absolute flex justify-between bottom-10 m-5'>
 				<p>Created by Krystian Żywczak</p>

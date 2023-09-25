@@ -44,3 +44,24 @@ body::before {
 	width: 450px;
 	height: 10px;
 }
+.loginStyle {
+	position: absolute;
+	left: 100px;
+	top: 150px;
+	padding: 10px;
+	width: 150px;
+	height: 150px;
+	margin: 50px;
+	background-color: red;
+}
+.loginStyle:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-width: 0 15px 15px 0;
+	border-color: black;
+	clip-path: polygon(100% 0, 0% 100%, 0 100%, 0 0);
+}
+.contactImage {
+}

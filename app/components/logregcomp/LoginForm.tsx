@@ -1,8 +1,6 @@
-import { FC, useState } from "react";
-
-// interface LoginFormProps {
-// 	onLogin: (username: string, password: string) => void;
-// }
+'use client'
+import { useState } from "react";
+import "../../css/globals.css"
 
 export default function LoginForm(onLogin: any) {
 	const [username, setUsername] = useState<string>("");
@@ -35,7 +33,7 @@ export default function LoginForm(onLogin: any) {
 				/>
 			</label>
 			<br />
-			<button type='submit'>Login</button>
+			<button type='submit' className="underline mt-3 border-4 p-2">Login</button>
 		</form>
 	);
 }
