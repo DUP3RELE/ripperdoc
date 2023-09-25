@@ -1,0 +1,49 @@
+.drawer {
+	position: fixed;
+	top: 0;
+	right: -250px; /* szerokość szuflady */
+	width: 250px; /* lub dowolna inna szerokość */
+	height: 100%;
+	color: white;
+	background-color: red;
+	transition: right 0.3s ease-in-out;
+	overflow-y: auto;
+	padding: 20px;
+}
+.drawerElement {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 50px;
+	height: 100%;
+	color: white;
+	background-color: red;
+	transition: right 0.3s ease-in-out;
+	overflow-y: auto;
+	padding: 20px;
+	clip-path: polygon(100% 0, 100% 100%, 0 94%, 0 0);
+}
+.drawer.open {
+	right: 0;
+}
+.drawerElement.open {
+	right: 250px;
+}
+.menu-button {
+	position: absolute;
+	left: 5px;
+	width: 40px;
+	height: 40px;
+	padding: 10px;
+	background-color: rgb(159, 1, 1);
+	clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+}
+.menu-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 0 15px 15px 0;
+    border-color: red;
+    clip-path: polygon(100% 0, 0% 100%, 0 100%, 0 0);
+  }
