@@ -3,7 +3,8 @@ import "../css/drawer.css";
 import arrowRight from "../img/arrow-right-solid.svg";
 import arrowLeft from "../img/arrow-left-solid.svg";
 import card from "../img/address-card-regular.svg";
-import home from "../img/house-solid.svg"
+import home from "../img/house-solid.svg";
+import chip from "../img/microchip-solid.svg"
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
@@ -58,18 +59,26 @@ const Drawer = () => {
 						/>
 					)}
 				</button>
-			<div className='mt-16'>
-				<Link href='/'>
-					<button
-						className='menu-button'
-					>
-						<Image
-							src={home}
-							alt='home'
-						/>
-					</button>
-				</Link>
-			</div>
+				<div className='mt-16'>
+					<Link href='/'>
+						<button className='menu-button'>
+							<Image
+								src={home}
+								alt='home'
+							/>
+						</button>
+					</Link>
+				</div>
+				<div className='mt-32'>
+					<Link href='/pages/products'>
+						<button className='menu-button'>
+							<Image
+								src={chip}
+								alt='products'
+							/>
+						</button>
+					</Link>
+				</div>
 			</div>
 			<div>
 				<Link href='/pages/loginPanel'>
@@ -77,17 +86,14 @@ const Drawer = () => {
 				</Link>
 			</div>
 			<div>
-				<Link href='/pages/register'>
+				<Link href='/pages/products/hardware'>
 					<p className='underline'>Hardware</p>
 				</Link>
 			</div>
 			<div>
-				<a
-					href=''
-					className='underline'
-				>
-					Software
-				</a>
+			<Link href='/pages/products/software'>
+					<p className='underline'>Software</p>
+				</Link>
 			</div>
 			<div>
 				<Link href='/pages/contact'>

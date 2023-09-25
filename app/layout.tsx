@@ -2,6 +2,7 @@ import "./css/globals.css";
 import type { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
 import Drawer from "./components/drawer";
+import { AuthProvider } from "./Providers";
 
 const robotoMono = Roboto_Mono({ subsets: ["latin"] });
 
@@ -18,8 +19,10 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={robotoMono.className}>
-				{children}
-				<Drawer />
+				<AuthProvider>
+					{children}
+					<Drawer />
+				</AuthProvider>
 			</body>
 		</html>
 	);

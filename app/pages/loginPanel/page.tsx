@@ -1,5 +1,5 @@
 import LoginForm from "@/app/components/logregcomp/LoginForm";
-import { Popover } from "@material-tailwind/react/components/Popover";
+import Link from "next/dist/client/link";
 
 export default function Login() {
 	return (
@@ -8,11 +8,12 @@ export default function Login() {
 				<h2 className='text-4xl'>Plug in:</h2>
 				<LoginForm />
 				<p className='mt-1'>
-					If you don't have account, you can{" "}
-					<span className='text-red-500 underline'>Register here</span>, or use{" "}
+					If you don't have account, you can
 					<span className='text-red-500 underline'>
-						<Popover />
+						<Link href='/pages/register'>Register here</Link>
 					</span>
+					, or use
+					<span className='text-red-500 underline'></span>
 				</p>
 			</div>
 		</>
