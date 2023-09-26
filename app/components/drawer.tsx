@@ -4,14 +4,16 @@ import arrowRight from "../img/arrow-right-solid.svg";
 import arrowLeft from "../img/arrow-left-solid.svg";
 import card from "../img/address-card-regular.svg";
 import home from "../img/house-solid.svg";
-import chip from "../img/microchip-solid.svg"
+import chip from "../img/microchip-solid.svg";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 const Drawer = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const drawerRef = useRef<HTMLDivElement | null>(null);
+	const { data: session } = useSession();
 
 	const toggleDrawer = () => {
 		setIsOpen(!isOpen);
@@ -23,15 +25,12 @@ const Drawer = () => {
 				drawerRef.current &&
 				!drawerRef.current.contains(event.target as Node)
 			) {
-				// Jeśli kliknięcie nastąpiło poza szufladą
 				if (isOpen) setIsOpen(false);
 			}
 		};
 
-		// Dodaj nasłuchiwanie zdarzeń przy montowaniu komponentu
 		document.addEventListener("mousedown", handleOutsideClick);
 
-		// Usuń nasłuchiwanie zdarzeń przy odmontowywaniu komponentu
 		return () => {
 			document.removeEventListener("mousedown", handleOutsideClick);
 		};
@@ -91,7 +90,7 @@ const Drawer = () => {
 				</Link>
 			</div>
 			<div>
-			<Link href='/pages/products/software'>
+				<Link href='/pages/products/software'>
 					<p className='underline'>Software</p>
 				</Link>
 			</div>
