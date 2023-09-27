@@ -2,7 +2,7 @@
 
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
-import AddProductForm from "./addproduct";
+import AdminBoard from "../pages/dashboard/adminBoard/page";
 
 export default function UserInfo() {
 	const { data: session } = useSession();
@@ -22,12 +22,13 @@ export default function UserInfo() {
 				>
 					Log Out
 				</button>
-				<button
-					onClick={() => AddProductForm()}
+
+				<a
+					href='../pages/dashboard/adminBoard/page'
 					className='bg-yellow-500 text-white font-bold px-6 py-2 mt-3'
 				>
 					Add Chrome
-				</button>
+				</a>
 			</div>
 		</div>
 	);

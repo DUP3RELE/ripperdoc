@@ -1,19 +1,18 @@
-const express = require("express");
-const router = express.Router();
-const Product = require("./models/Product");
-const authMiddleware = require("./middlewares/auth");
+import { connectMongoDB } from "@/lib/mongodb";
+import Product from "@/models/product";
+import { NextResponse } from "next/server";
 
-router.post("/add-product", authMiddleware, async (req, res) => {
-	// Sprawdź, czy zalogowany użytkownik ma uprawnienia do dodawania produktów
-	if (req.user.role !== "SPECIAL") {
-		return res.status(403).send("Brak uprawnień");
+export async function POST(req) {
+	try {
+		const { title, description, price, image } = await req.json();
+		await connectMongoDB();
+		await Product.create({ title, description, price, image });
+
+		return NextResponse.json({ message: "Product created." }, { status: 201 });
+	} catch (error) {
+		return NextResponse.json(
+			{ message: "An error occurred while creating a product." },
+			{ status: 500 }
+		);
 	}
-
-	// Dodaj nowy produkt do bazy danych
-	const product = new Product(req.body);
-	await product.save();
-
-	res.status(201).send(product);
-});
-
-module.exports = router;
+}
