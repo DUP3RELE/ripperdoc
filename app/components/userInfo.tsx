@@ -2,7 +2,7 @@
 
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
-import AdminBoard from "../pages/dashboard/adminBoard/page";
+import AdminBoard from "../pages/dashboard/adminboard/page";
 
 export default function UserInfo() {
 	const { data: session } = useSession();
@@ -24,7 +24,7 @@ export default function UserInfo() {
 				</button>
 
 				<a
-					href='../pages/dashboard/adminBoard/page'
+					href='dashboard/adminboard'
 					className='bg-yellow-500 text-white font-bold px-6 py-2 mt-3'
 				>
 					Add Chrome

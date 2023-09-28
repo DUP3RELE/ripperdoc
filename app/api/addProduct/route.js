@@ -1,6 +1,7 @@
 import { connectMongoDB } from "@/lib/mongodb";
 import Product from "@/models/product";
 import { NextResponse } from "next/server";
+import multer from "multer";
 
 export async function POST(req) {
 	try {
