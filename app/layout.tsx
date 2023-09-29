@@ -19,10 +19,12 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={robotoMono.className}>
-				<AuthProvider>
-					{children}
-					<Drawer />
-				</AuthProvider>
+				<div className='wrapper'>
+					<AuthProvider>
+						{children}
+						<Drawer />
+					</AuthProvider>
+				</div>np
 			</body>
 		</html>
 	);

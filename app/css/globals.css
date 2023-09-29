@@ -40,6 +40,9 @@ body::before {
 	transform-origin: 50% 50%;
 	white-space: nowrap;
 }
+.wrapper {
+	max-width: 1600px;
+}
 .cobalt-fingers {
 	width: 450px;
 	height: 10px;
