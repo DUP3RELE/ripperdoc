@@ -53,10 +53,10 @@ export default function GetProducts() {
 							</div>
 						</div>
 						<div className='flex-col m-3'>
-							<div className="mb-5">
+							<div className="mb-10">
 								<p>Description: {t.description}</p>
 							</div>
-							<div className="mb-2 mt-3">
+							<div className="mb-2 mt-3 bottom-0 absolute">
 								<p>Price: {t.price} E$ </p>
 							</div>
 						</div>
