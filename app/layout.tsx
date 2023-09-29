@@ -24,7 +24,7 @@ export default function RootLayout({
 						{children}
 						<Drawer />
 					</AuthProvider>
-				</div>np
+				</div>
 			</body>
 		</html>
 	);

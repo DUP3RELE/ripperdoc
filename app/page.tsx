@@ -40,8 +40,6 @@ export default function Home() {
 					to fit your body, needs, and desires seamlessly.
 				</p>
 			</div>
-
-			<div className='sticky right-0'></div>
 		</main>
 	);
 }
