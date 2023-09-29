@@ -1,7 +1,15 @@
 import LoginForm from "@/app/components/logregcomp/LoginForm";
 import Link from "next/dist/client/link";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+import { authOptions } from "../../api/auth/[...nextauth]/route";
 
-export default function Login() {
+export default async function Login() {
+	// @ts-ignore
+	const session = await getServerSession(authOptions);
+
+	if (session) redirect("../pages/dashboard");
+
 	return (
 		<>
 			<div className='loginStyle'>

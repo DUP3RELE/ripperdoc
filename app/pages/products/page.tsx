@@ -1,12 +1,10 @@
-import Hardware from "./hardware/page";
-import Software from "./software/page";
+import GetProducts from "./getproducts/page";
 
 export default function Products() {
 	return (
 		<>
-			<div className="flex">
-				<div className='w-1/2'><Hardware /></div>
-				<div className='w-1/2'><Software /></div>
+			<div className='flex'>
+				<GetProducts />
 			</div>
 		</>
 	);

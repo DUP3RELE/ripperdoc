@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
-import HandleImageUpload from "./handleimageupload";
 
 export default function AddProductForm() {
 	const [title, setTitle] = useState("");
@@ -9,15 +8,24 @@ export default function AddProductForm() {
 	const [price, setPrice] = useState(0);
 	const [image, setImage] = useState("");
 
-	const handleImageUpload = (imageUrl: any) => {
-		setImage(imageUrl);
-	};
+	function covertToBase64(e: any) {
+		var reader = new FileReader();
+		reader.readAsDataURL(e.target.files[0]);
+		reader.onload = () => {
+			console.log(reader.result);
+			// @ts-ignore
+			setImage(reader.result);
+		};
+		reader.onerror = (error) => {
+			console.log("Error: ", error);
+		};
+	}
 
 	const handleSubmit = async (e: any) => {
 		e.preventDefault();
 
 		try {
-			const response = await axios.post("/api/addProduct", {
+			const response = await axios.post("/api/products", {
 				title,
 				description,
 				price,
@@ -57,24 +65,40 @@ export default function AddProductForm() {
 			</label>
 			<label className='flex flex-col'>
 				Price:
-				<input
-					className='text-black m-3 w-36'
-					type='number'
-					value={price}
-					onChange={(e) => setPrice(Number(e.target.value))}
-					required
-				/>
+				<div style={{ display: "flex", alignItems: "center" }}>
+					<input
+						className='text-black m-3 w-36'
+						type='number'
+						value={price}
+						onChange={(e) => setPrice(Number(e.target.value))}
+						required
+					/>
+					<span>E$</span>
+				</div>
 			</label>
 			<label className='flex flex-col'>
 				Upload Image:
-				<HandleImageUpload
-					// @ts-ignore
-					onImageUpload={handleImageUpload}
-				/>
+				<label className='mt-2'>
+					Choose a File:
+					<input
+						type='file'
+						accept='.jpg, .jpeg, .png'
+						onChange={covertToBase64}
+					/>
+				</label>
+				{image == "" || image == null ? (
+					""
+				) : (
+					<img
+						width={100}
+						height={100}
+						src={image}
+					/>
+				)}
 			</label>
 			<button
 				type='submit'
-				className='m-3 p-3 w-36 bg-yellow-500 hover:bg-yellow-600'
+				className='m-3 mt-10 p-3 w-36 bg-yellow-500 hover:bg-yellow-600'
 			>
 				Add Product
 			</button>

@@ -2,10 +2,18 @@
 
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
-import AdminBoard from "../pages/dashboard/adminboard/page";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function UserInfo() {
 	const { data: session } = useSession();
+	const router = useRouter();
+
+	useEffect(() => {
+		if (!session?.user?.name || !session?.user?.email) {
+			router.push("./loginPanel"); // przekierowuje na stronę logowania, jeśli user.name lub user.email są niezdefiniowane
+		}
+	}, [session, router]);
 
 	return (
 		<div className='grid place-items-center h-screen'>

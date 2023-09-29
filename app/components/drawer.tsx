@@ -80,18 +80,20 @@ const Drawer = () => {
 				</div>
 			</div>
 			<div>
-				<Link href='/pages/loginPanel'>
-					<p className='underline'>Log In</p>
-				</Link>
+				{session && session.user && session.user.name ? (
+					<Link href='/pages/dashboard'>
+							
+							<span className='underline'>{session.user.name}</span>
+					</Link>
+				) : (
+					<Link href='/pages/loginPanel'>
+						<p className='underline'>Log in</p>
+					</Link>
+				)}
 			</div>
 			<div>
-				<Link href='/pages/products/hardware'>
-					<p className='underline'>Hardware</p>
-				</Link>
-			</div>
-			<div>
-				<Link href='/pages/products/software'>
-					<p className='underline'>Software</p>
+				<Link href='/pages/products'>
+					<p className='underline'>Products</p>
 				</Link>
 			</div>
 			<div>
