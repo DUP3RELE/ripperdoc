@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
+import Image from "next/image";
 
 export default function AddProductForm() {
 	const [title, setTitle] = useState("");
@@ -89,10 +90,11 @@ export default function AddProductForm() {
 				{image == "" || image == null ? (
 					""
 				) : (
-					<img
+					<Image
 						width={100}
 						height={100}
 						src={image}
+						alt="image"
 					/>
 				)}
 			</label>

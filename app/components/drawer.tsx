@@ -92,6 +92,16 @@ const Drawer = () => {
 				)}
 			</div>
 			<div>
+				{session && session.user && session.user.name ? (
+					<Link href='/pages/basket'>
+							
+							<span className='underline'>{session.user.name} PurchasePod</span>
+					</Link>
+				) : (
+					<div></div>
+				)}
+			</div>
+			<div>
 				<Link href='/pages/products'>
 					<p className='underline'>Products</p>
 				</Link>
