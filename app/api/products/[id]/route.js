@@ -9,7 +9,6 @@ export async function PUT(request, { params }) {
 			newTitle: title,
 			newDescription: description,
 			newPrice: price,
-			newImage: image,
 		} = await request.json();
 		await connectMongoDB();
 		await Products.findByIdAndUpdate(id, { title, description, price, image });
@@ -26,11 +25,11 @@ export async function GET(request, { params }) {
 	try {
 		const { id } = params;
 		await connectMongoDB();
-		const products = await Products.findOne({ _id: id });
-		return NextResponse.json({ products }, { status: 200 });
+		const product = await Products.findOne({ _id: id });
+		return NextResponse.json({ product }, { status: 200 });
 	} catch (error) {
 		return NextResponse.json(
-			{ message: "An error occured while requesting product." },
+			{ message: "An error occured while requesting note." },
 			{ status: 500 }
 		);
 	}

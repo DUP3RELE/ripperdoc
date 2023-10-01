@@ -6,9 +6,9 @@ export default function Home() {
 			</div>
 			<div className=''>
 				<p>
-					Greetings, Runners, Hackers, and Cyberpunks! You`&apos;`ve just jacked into
+					Greetings, Runners, Hackers, and Cyberpunks! You&apos;ve just jacked into
 					the digital haven of the most skilled Ripperdoc in the neon-lit
-					backstreets of Night City - Cobalt Fingers. Here, we don`&apos;`t just
+					backstreets of Night City - Cobalt Fingers. Here, we don&apos;t just
 					upgrade bodies, we redefine humanity and give you the edge to navigate
 					the urban jungle.
 				</p>
@@ -18,7 +18,7 @@ export default function Home() {
 				<p>
 					With an arsenal of high-tech implants, neuro-enhancements, and body
 					modifications, we turn the impossible into your new normal. Whether
-					you`&apos;`re looking to enhance your reflexes, amplify your strength, or
+					you&apos;re looking to enhance your reflexes, amplify your strength, or
 					become invisible in the shadows, Cobalt Fingers has got the tech to
 					make you superior.
 				</p>

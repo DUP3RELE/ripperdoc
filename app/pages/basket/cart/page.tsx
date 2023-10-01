@@ -37,7 +37,7 @@ function Cart() {
 										}
 									</span>{" "}
 									-{" "}
-									<span>
+									<span className="font-bold">
 										{
 											// @ts-ignore
 											item.price
@@ -55,11 +55,11 @@ function Cart() {
 						))}
 					</ul>
 					<div className='flex flex-row'>
-						<p className='bg-green-500 p-5 pl-10 product-style m-2'>
+						<p className='bg-yellow-500 p-5 pl-10 product-style m-2 font-bold'>
 							Full Price: {getTotalPrice()} E$
 						</p>
 
-						<p className='bg-red-500 hover:bg-red-600 underline p-5 pl-10 m-2 product-style'>
+						<p className='bg-green-500 hover:bg-green-600 underline p-5 pl-10 m-2 product-style'>
 							<a href='http://kzportfolio.pl/' target="_blank">BUY</a>
 						</p>
 					</div>

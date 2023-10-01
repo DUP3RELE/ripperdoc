@@ -2,14 +2,19 @@
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
+import RemoveBtn from "../../dashboard/adminboard/removeproductbtn";
 
 export default function GetProducts() {
 	const [products, setProducts] = useState([]);
 	const [loading, setLoading] = useState(true);
-	const [cartItems, setCartItems] = useState(() => {
+	const [cartItems, setCartItems] = useState([]);
+
+	useEffect(() => {
 		const savedCart = sessionStorage.getItem("cart");
-		return savedCart ? JSON.parse(savedCart) : [];
-	});
+		if (savedCart) {
+			setCartItems(JSON.parse(savedCart));
+		}
+	}, []);
 
 	const { data: session } = useSession();
 
@@ -19,6 +24,7 @@ export default function GetProducts() {
 				const res = await fetch("../api/products", {
 					cache: "no-store",
 				});
+				console.log(getProducts);
 
 				if (!res.ok) {
 					throw new Error("Failed to fetch products");
@@ -37,6 +43,7 @@ export default function GetProducts() {
 	}, []);
 
 	const addToCart = (product: any) => {
+		// @ts-ignore
 		setCartItems((prevItems: any) => {
 			const newItems = [
 				...prevItems,
@@ -81,7 +88,7 @@ export default function GetProducts() {
 										// @ts-ignore
 										t.image
 									}
-									alt="image"
+									alt='image'
 								/>
 							</div>
 						</div>
@@ -90,7 +97,7 @@ export default function GetProducts() {
 							t._id
 						) && (
 							<div className='absolute inset-0 flex items-center justify-center bg-red-500 product-style-bought'>
-								<span className='text-white bg-yellow-500 p-5 text-lg z-100'>
+								<span className='text-white bg-yellow-500 p-5 text-lg z-100 text-bold underline'>
 									<a href='../pages/basket'>Dodano do koszyka</a>
 								</span>
 							</div>
@@ -122,18 +129,31 @@ export default function GetProducts() {
 								</p>
 							</div>
 						</div>
-						{!isProductInCart(
-							// @ts-ignore
-							t._id
-						) &&
-							session && (
-								<button
-									onClick={() => addToCart(t)}
-									className='absolute bottom-2 right-2 border bg-yellow-500 hover:bg-yellow-600 underline pt-2 pb-2 pl-4 pr-4'
-								>
-									BUY
-								</button>
+						<div className='h-20'>
+							{!isProductInCart(
+								// @ts-ignore
+								t._id
+							) &&
+								session && (
+									<button
+										onClick={() => addToCart(t)}
+										className='absolute bottom-2 right-2 border bg-yellow-500 hover:bg-yellow-600 underline pt-2 pb-2 pl-4 pr-4'
+									>
+										BUY
+									</button>
+								)}
+
+							{session?.user?.name === "Admin" && (
+								<div className='absolute bottom-2 right-20 border bg-yellow-500 hover:bg-yellow-600 underline pt-2 pb-2 pl-4 pr-4'>
+									<RemoveBtn
+										id={
+											// @ts-ignore
+											t._id
+										}
+									/>
+								</div>
 							)}
+						</div>
 					</div>
 				))}
 			</div>

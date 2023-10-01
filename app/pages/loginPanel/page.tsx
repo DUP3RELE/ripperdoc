@@ -17,7 +17,7 @@ export default async function Login() {
 				<h2 className='text-4xl'>Plug in:</h2>
 				<LoginForm />
 				<p className='mt-1'>
-					If you don`&apos;`t have account, you can
+					If you don&apos;t have account, you can
 					<span className='text-red-500 underline'>
 						<Link href='/pages/register'>Register here</Link>
 					</span>
