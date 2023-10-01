@@ -2,12 +2,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function AddProductForm() {
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
 	const [price, setPrice] = useState(0);
 	const [image, setImage] = useState("");
+
+	const router = useRouter();
 
 	function covertToBase64(e: any) {
 		var reader = new FileReader();
@@ -32,6 +35,7 @@ export default function AddProductForm() {
 				price,
 				image,
 			});
+			router.push("../products");
 			console.log("Product Added:", response.data);
 		} catch (error) {
 			console.error("Error adding product:");
@@ -94,7 +98,7 @@ export default function AddProductForm() {
 						width={100}
 						height={100}
 						src={image}
-						alt="image"
+						alt='image'
 					/>
 				)}
 			</label>
