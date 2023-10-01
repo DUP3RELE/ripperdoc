@@ -7,7 +7,7 @@ export default function Dashboard() {
 	return (
 		<>
 			<div className='m-5'>
-				<p>You`&apos;`re in, Runner.</p>
+				<p>You&apos;re in, Runner.</p>
 			</div>
 			<UserInfo />
 		</>
