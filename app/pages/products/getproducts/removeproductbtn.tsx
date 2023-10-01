@@ -17,8 +17,8 @@ const getProducts = async () => {
 		console.log("Error loading products: ", error);
 	}
 };
-// @ts-ignore
-export default function RemoveBtn({ id }) {
+
+export default function RemoveBtn({ id }: any) {
 	const router = useRouter();
 	const removeProduct = async () => {
 		const confirmed = confirm("Are you sure?");
@@ -37,5 +37,12 @@ export default function RemoveBtn({ id }) {
 		}
 	};
 
-	return <button className="underline" onClick={removeProduct}>DELETE</button>;
+	return (
+		<button
+			className='underline'
+			onClick={removeProduct}
+		>
+			DELETE
+		</button>
+	);
 }
