@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
-import RemoveBtn from "../../dashboard/adminboard/removeproductbtn";
+import RemoveBtn from "./removeproductbtn";
 
 export default function GetProducts() {
 	const [products, setProducts] = useState([]);
