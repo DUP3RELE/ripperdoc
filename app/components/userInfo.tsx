@@ -45,7 +45,7 @@ export default function UserInfo() {
 
 					{session?.user?.name === "Admin" && (
 						<a
-							href='dashboard/adminBoard'
+							href='dashboard/adminboard'
 							className='bg-yellow-500 text-white font-bold px-3 py-2 mt-3 text-center'
 						>
 							Add Chrome

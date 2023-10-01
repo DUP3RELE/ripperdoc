@@ -31,7 +31,7 @@
 		"models/user.js",
 		"app/pages/dashboard/page.tsx",
 		"app/api/register/route.js",
-		"app/pages/dashboard/adminBoard/editproductform/[id]/page.jsx",
+		"app/pages/dashboard/adminboard/editproductform/[id]/page.jsx",
 		"app/components/editcomponent.jsx"
 	],
 	"exclude": ["node_modules"]
