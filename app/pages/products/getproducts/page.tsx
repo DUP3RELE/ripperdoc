@@ -24,7 +24,6 @@ export default function GetProducts() {
 				const res = await fetch("../api/products", {
 					cache: "no-store",
 				});
-				console.log(getProducts);
 
 				if (!res.ok) {
 					throw new Error("Failed to fetch products");
@@ -69,11 +68,11 @@ export default function GetProducts() {
 					<div
 						// @ts-ignore
 						key={t._id}
-						className='w-96 m-10 bg-red-500 product-style relative'
+						className='w-3/5 m-2 md:w-96 md:m-10 bg-red-500 product-style relative'
 					>
 						<div className='relative flex'>
-							<div className='w-96'>
-								<h2 className='font-bold m-10'>
+							<div className='w-20 md:w-96'>
+								<h2 className='font-bold mt-10 ml-1 md:m-10'>
 									{
 										// @ts-ignore
 										t.title
@@ -103,7 +102,7 @@ export default function GetProducts() {
 							</div>
 						)}
 						<div className='flex-col m-3 '>
-							<div className='mb-10'>
+							<div className=' md:mb-10'>
 								<p>
 									Description:{" "}
 									{
@@ -112,7 +111,7 @@ export default function GetProducts() {
 									}
 								</p>
 							</div>
-							<div className='mb-2 mt-3 bottom-0 absolute'>
+							<div className='mb-2 mt-3 md:bottom-0 absolute'>
 								<p>
 									{isProductInCart(
 										// @ts-ignore

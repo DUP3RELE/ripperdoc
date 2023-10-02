@@ -103,3 +103,28 @@ body::before {
 	border-color: rgb(239 68 68);
 	clip-path: polygon(100% 0, 0% 100%, 0 100%, 0 0);
 }
+.ripperdoc-image {
+	margin-bottom: 25px;
+	border: 5px solid red;
+	transition: 0.5s;
+}
+.ripperdoc-image:hover {
+	transform: rotate(-5deg);
+}
+@media (max-width: 768px) {
+	body::before {
+		content: "RIPPERDOC://SOFTWARE// ?? //HARDWARE//";
+		position: fixed;
+		top: 200px;
+		right: 0;
+		bottom: 0;
+		left: 500px;
+		z-index: -1;
+		color: rgba(255, 0, 0, 0.6);
+		font-size: 3em;
+		pointer-events: none;
+		transform: rotate(-90deg);
+		transform-origin: 50% 50%;
+		white-space: nowrap;
+	}
+}
