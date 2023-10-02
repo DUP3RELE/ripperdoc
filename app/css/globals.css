@@ -127,4 +127,8 @@ body::before {
 		transform-origin: 50% 50%;
 		white-space: nowrap;
 	}
+	.loginStyle {
+		left: -20px;
+		
+	}
 }

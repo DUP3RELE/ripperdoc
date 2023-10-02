@@ -68,7 +68,7 @@ export default function GetProducts() {
 					<div
 						// @ts-ignore
 						key={t._id}
-						className='w-3/5 m-2 md:w-96 md:m-10 bg-red-500 product-style relative'
+						className='w-3/5 m-2 ml-5 md:w-96 md:m-10 bg-red-500 product-style relative'
 					>
 						<div className='relative flex'>
 							<div className='w-20 md:w-96'>
