@@ -97,7 +97,7 @@ export default function GetProducts() {
 						) && (
 							<div className='absolute inset-0 flex items-center justify-center bg-red-500 product-style-bought'>
 								<span className='text-white bg-yellow-500 p-5 text-lg z-100 text-bold underline'>
-									<a href='../pages/basket'>Dodano do koszyka</a>
+									<a href='../pages/basket'>Added to cart</a>
 								</span>
 							</div>
 						)}

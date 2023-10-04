@@ -33,6 +33,6 @@
 		"app/api/register/route.js",
 		"app/pages/dashboard/adminboard/editproductform/[id]/page.jsx",
 		"app/components/editcomponent.jsx"
-	],
+, "app/api/auth/[...nextauth]/route.js"	],
 	"exclude": ["node_modules"]
 }
