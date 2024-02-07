@@ -1,6 +1,5 @@
 import Image from "next/image";
 import ripperdoc from "./img/Ripperdoc-named-cobalt-fingers--with-implants--old-guy-.png";
-import HackerModal from "./pages/loginPanel/hackermodal";
 
 export default function Home() {
 	return (
