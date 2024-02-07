@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ripperdoc from "./img/Ripperdoc-named-cobalt-fingers--with-implants--old-guy-.png";
+import HackerModal from "./pages/loginPanel/hackermodal";
 
 export default function Home() {
 	return (
@@ -7,14 +8,29 @@ export default function Home() {
 			<div className='max-w-5xl w-full font-mono text-sm flex flex-wrap'>
 				<div className='md:w-1/2'>
 					<h1 className='text-2xl m-2 md:mb-1 '>
-						Welcome to Cobalt Fingers Ripperdock!
+						Welcome to Cobalt Fingers Ripperdock! // You can create Your account
+						<a
+							href='/pages/loginPanel'
+							className='text-red-700'
+						>
+							{" "}
+							here
+						</a>
+						, and get some chrome! // ({" "}
+						<a
+							href='/pages/loginPanel'
+							className='text-violet-600'
+						>
+							Consider using an admin account to add additional items.
+						</a>
+						)
 					</h1>
 				</div>
 				<div className='md:w-1/2 flex justify-center items-center'>
 					<Image
-					className="ripperdoc-image"
-						width={300}
-						height={300}
+						className='ripperdoc-image'
+						width={200}
+						height={200}
 						src={ripperdoc}
 						alt='ripperdoc Chrome fingers'
 					/>
